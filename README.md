@@ -1,214 +1,137 @@
-<div align="center">
+# Adobe AI Leadership Analyst
 
-```
-╔══════════════════════════════════════════════════════════════╗
-║                                                              ║
-║    ░█████╗░██████╗░░█████╗░██████╗░███████╗                 ║
-║    ██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔════╝                 ║
-║    ███████║██║  ██║██║  ██║██████╦╝█████╗                   ║
-║    ██╔══██║██║  ██║██║  ██║██╔══██╗██╔══╝                   ║
-║    ██║  ██║██████╔╝╚█████╔╝██████╦╝███████╗                 ║
-║    ╚═╝  ╚═╝╚═════╝  ╚════╝ ╚═════╝ ╚══════╝                 ║
-║                                                              ║
-║         ◆  A I   L E A D E R S H I P   A N A L Y S T  ◆     ║
-║                                                              ║
-╚══════════════════════════════════════════════════════════════╝
-```
+A Retrieval-Augmented Generation (RAG) agent that indexes Adobe's official financial documents (10-K, 10-Q, Earnings Releases) and answers leadership questions with grounded, citation-backed responses.
 
-### *Ask anything. Get answers grounded in real financial documents.*
+## Features
 
-[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![LangChain](https://img.shields.io/badge/LangChain-Orchestration-1C3C3C?style=for-the-badge&logo=chainlink&logoColor=white)](https://langchain.com)
-[![Groq](https://img.shields.io/badge/Groq-Lightning%20Fast-F55036?style=for-the-badge)](https://groq.com)
-[![FAISS](https://img.shields.io/badge/FAISS-Vector%20Search-0064A5?style=for-the-badge)](https://github.com/facebookresearch/faiss)
-[![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-Embeddings-FFD21E?style=for-the-badge)](https://huggingface.co)
+- **PDF ingestion** — recursive chunking with configurable size and overlap
+- **FAISS vector store** — cosine similarity search over embedded document chunks
+- **HuggingFace embeddings** — `all-MiniLM-L6-v2` runs fully offline after first download
+- **Groq LLM** — fast inference via `openai/gpt-oss-120b` (configurable)
+- **Strict RAG prompt** — answers sourced exclusively from documents, never outside knowledge
+- **Auto-save** — every Q&A pair saved to `outputs/` with timestamps
 
-</div>
+## Tech Stack
 
----
+The project leverages a modern AI stack focused on high-speed inference, local embedding generation, and robust document orchestration.
 
-## ◈ What Is This?
-
-> **A RAG-powered analyst that lives inside Adobe's financials.**
-
-Drop in any 10-K, 10-Q, or Earnings Release — and this agent transforms dense PDFs into instant, citation-backed answers. No hallucinations. No guessing. Every response is anchored to the documents you provide.
-
-```
-You ask   →  "How did Adobe's net income change in FY2025?"
-Agent     →  Scans embedded document chunks in milliseconds
-Response  →  Grounded answer + exact source context. Every time.
-```
-
----
-
-## ◈ How It Works
-
-'''
-```
-
----
-
-## ◈ System Architecture
-
-<div align="center">
-
-![System Architecture](https://raw.githubusercontent.com/Amruth-varsh/AI-Leadership-Insight-Decision-Agent/main/System%20Architecture.png)
-
-</div>
-
----
-
-## ◈ Tech Stack
-
-| Layer | Tool | Why It's Here |
+### 🧠 Core Intelligence & Orchestration
+| Component | Technology | Role |
 |---|---|---|
-| 🧠 **LLM** | Groq `llama-3.3-70b-versatile` | Blazing inference. Real-time responses. |
-| 🔗 **Orchestration** | LangChain | RAG pipeline, prompt templates, LLM wiring |
-| 🗄️ **Vector DB** | FAISS | Facebook's gold-standard similarity search |
-| 🔡 **Embeddings** | HuggingFace `all-MiniLM-L6-v2` | Runs 100% offline after first download |
-| 📄 **PDF Parsing** | PyPDF | Recursive extraction and text cleaning |
-| ✂️ **Chunking** | Recursive Character Splitter | Configurable size + overlap |
-| 🔐 **Config** | python-dotenv | Secure API key management via `.env` |
+| **LLM** | [Groq API](https://groq.com/) | Real-time inference using models like `llama-3.3-70b-versatile`. |
+| **Framework** | [LangChain](https://www.langchain.com/) | Orchestrates the RAG pipeline, prompt templates, and LLM interactions. |
 
----
 
-## ◈ Project Structure
+### 🔍 Retrieval & Vector Management
+| Component | Technology | Role |
+|---|---|---|
+| **Vector Database** | [FAISS](https://github.com/facebookresearch/faiss) | Efficient similarity search for dense vectors (Cosine Similarity). |
+| **Embeddings** | [Hugging Face](https://huggingface.co/sentence-transformers) | Local generation of embeddings using `all-MiniLM-L6-v2`. |
+| **Retrieval Strategy** | Dense Retrieval | Top-K similarity search to fetch the most relevant document chunks. |
+
+### 🛠️ Data Processing & Infrastructure
+| Component | Technology | Role |
+|---|---|---|
+| **PDF Parsing** | [PyPDF](https://pypdf.readthedocs.io/) | Handles recursive extraction and cleaning of text from PDF documents. |
+| **Chunking** | Recursive Character Splitter | Splits documents into meaningful chunks with configurable overlap. |
+| **Environment** | Python 3.10+ | Core runtime environment. |
+| **Config** | `python-dotenv` | Securely manages API keys and environment variables via `.env`. |
+
+## Project Structure
 
 ```
-adobe-ai-analyst/
-│
-├── 📄  main.py              ← CLI entry point. Start here.
-├── ⚙️  config.py            ← All settings loaded from .env
-├── 📋  requirements.txt     ← Python dependencies
-├── 🔐  .env                 ← Your API keys (never commit this)
-│
-├── 📁  data/                ← Drop your PDFs in here
-├── 🗄️  faiss_index/         ← Auto-generated vector store
-├── 💾  outputs/             ← Saved Q&A pairs (timestamped)
-│
-└── 📁  src/
-    ├── 🔧  __init__.py
-    ├── 📥  ingest.py        ← PDF loading & chunking logic
-    ├── 🔍  embeddings.py    ← FAISS index build/load
-    └── 🤖  agent.py         ← Prompt template + Groq LLM call
+├── config.py           # All settings loaded from .env
+├── main.py             # CLI entry point
+├── requirements.txt    # Python dependencies
+├── .env                # API keys and configuration 
+├── data/               # Place your PDF documents here
+├── faiss_index/        # Auto-generated FAISS vector store
+├── outputs/            # Saved Q&A pairs (timestamped)
+└── src/
+    ├── __init__.py
+    ├── ingest.py       # PDF loading and chunking
+    ├── embeddings.py   # HuggingFace embeddings + FAISS build/load
+    └── agent.py        # Prompt template + Groq LLM call
 ```
 
----
+## Setup
 
-## ◈ Setup in 4 Steps
-
-### `1` — Create a virtual environment
+### 1. Create a virtual environment
 
 ```bash
 python -m venv venv
-
-# Windows
-venv\Scripts\activate
-
-# Mac / Linux
-source venv/bin/activate
+venv\Scripts\activate        # Windows
+source venv/bin/activate     # Mac/Linux
 ```
 
-### `2` — Install dependencies
+### 2. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### `3` — Configure your `.env`
+### 3. Configure `.env`
 
-Create a `.env` file in the root directory:
+#### Steps to Get Your Groq API Key
+
+1. Go to [console.groq.com](https://console.groq.com)
+2. Click **Sign Up** if you don't have an account (sign up with Google or Email)
+3. After logging in, click **API Keys** in the left sidebar
+4. Click **Create API Key** (top right)
+5. Give it a name like `adobe-project` and click **Submit**
+6. Copy your key immediately — it starts with `gsk_...` and **will not be shown again**
+
+#### How to Enable `llama-3.3-70b-versatile` in Groq Console
+
+1. Log in to [console.groq.com](https://console.groq.com)
+2. Click **Settings** in the left sidebar
+3. Click **Limits**
+4. Scroll down to the **Allowed Models** section
+5. Click the model selection dropdown/search box
+6. Type `llama-3.3-70b-versatile` and select it from the list
+7. It will appear as a tag/chip in the allowed models box
+8. Click **Save**
+
 
 ```env
-# ── LLM ────────────────────────────────────────────
-GROQ_API_KEY=gsk_your_key_here
+GROQ_API_KEY=your_groq_api_key_here
 MODEL_NAME=llama-3.3-70b-versatile
-
-# ── Embeddings ─────────────────────────────────────
 EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
-
-# ── Retrieval ──────────────────────────────────────
-TOP_K_RESULTS=10
 TEMPERATURE=0
-
-# ── Chunking ───────────────────────────────────────
+TOP_K_RESULTS=10
 CHUNK_SIZE=1200
 CHUNK_OVERLAP=200
-
-# ── Paths ──────────────────────────────────────────
 DATA_FOLDER=./data
 OUTPUT_FOLDER=./outputs
 ```
 
-> **Getting your Groq API Key**
-> 1. Go to [console.groq.com](https://console.groq.com) → Sign Up
-> 2. Sidebar → **API Keys** → **Create API Key**
-> 3. Name it (e.g. `adobe-project`) → Copy immediately
-> 4. Key starts with `gsk_...` — it's shown **only once**
+### 4. Add documents
 
-> **Enabling `llama-3.3-70b-versatile`**
-> Console → **Settings** → **Limits** → **Allowed Models** → search & select the model → **Save**
+Place PDF files (10-K, earnings releases, etc.) in the `data/` folder.
 
-### `4` — Add your PDFs
+## Usage
 
 ```bash
-# Place your financial documents here:
-data/
-  ├── adobe-10k-2024.pdf
-  ├── adobe-10q-q3-2024.pdf
-  └── adobe-earnings-q4-2024.pdf
-```
-
----
-
-## ◈ Usage
-
-```bash
-# First run — builds the FAISS index automatically
-python main.py
-
-# Force re-index (after adding new documents)
-python main.py --rebuild
-
-# Verbose debug output
-set LOG_LEVEL=DEBUG && python main.py     # Windows
-LOG_LEVEL=DEBUG python main.py           # Mac/Linux
+python main.py             # Start the agent (builds index on first run)
+python main.py --rebuild   # Force re-index all documents from scratch
 ```
 
 Type your question at the prompt. Type `exit` or `quit` to stop.
 
----
+### Example Questions
 
-## ◈ Example Questions to Try
+- "How did Adobe's net income perform in fiscal year 2025 compared to 2024?"
+- "What is Adobe's revenue breakdown by segment for FY2024?"
+- "How did the Publishing and Advertising segment perform compared to the other segments?"
+- "What is Adobe's FY2026 earnings per share guidance?"
+- "How did Digital Media perform compared to last year?"
 
-```
-◆  "How did Adobe's net income perform in FY2025 vs FY2024?"
-◆  "What is Adobe's revenue breakdown by segment for FY2024?"
-◆  "How did the Publishing and Advertising segment compare to others?"
-◆  "What is Adobe's FY2026 earnings per share guidance?"
-◆  "How did Digital Media ARR grow year-over-year?"
-◆  "What risks did Adobe highlight in their most recent 10-K?"
-```
 
----
 
-## ◈ Important Notes
 
-```
-⚠️  Never commit .env — add it to .gitignore
-⚠️  FAISS index auto-builds on first run
-⚠️  Embedding model caches locally — no internet needed after first download
-⚠️  Use --rebuild whenever you add new PDFs to data/
-```
+## Notes
 
----
-
-<div align="center">
-
-```
-Built with  ⚡ Groq  ·  🦜 LangChain  ·  🤗 HuggingFace  ·  🔍 FAISS
-```
-
-*Answers grounded in documents. Never outside them.*
-
-</div>
+- Do **not** commit `.env` — add it to `.gitignore`
+- The FAISS index is built automatically on first run; use `--rebuild` after adding new documents
+- The embedding model is cached locally after the first download — no internet required after that
+- Set `LOG_LEVEL=DEBUG` for verbose output: `set LOG_LEVEL=DEBUG && python main.py`
