@@ -101,7 +101,7 @@ source venv/bin/activate     # Mac/Linux
 ### 2. Install dependencies
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt or pip install -r requirements.txt
 ```
 
 ### 3. Configure `.env`
