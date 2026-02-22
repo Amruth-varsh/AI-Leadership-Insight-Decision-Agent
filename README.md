@@ -2,10 +2,11 @@
   <img src="https://github.com/Amruth-varsh/Amruth-varsh/blob/main/ai-leadership-agent-preview.gif" height="400" />
 </div>
 
-
 <div align="center">
   
+
 ### *Ask anything. Get answers grounded in real financial documents.*
+
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![LangChain](https://img.shields.io/badge/LangChain-Orchestration-1C3C3C?style=for-the-badge&logo=chainlink&logoColor=white)](https://langchain.com)
