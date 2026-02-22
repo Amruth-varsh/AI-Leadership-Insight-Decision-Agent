@@ -73,7 +73,7 @@ AI-Leadership-Insight-Decision-Agent/
 ├── 📄  main.py              ← CLI entry point. Start here.
 ├── ⚙️  config.py            ← All settings loaded from .env
 ├── 📋  requirements.txt     ← Python dependencies
-├── 🔐  .env                 ← Your API keys (never commit this)
+├── 🔐  .env                 ← Your API keys
 │
 ├── 🗄️  faiss_index/         ← Auto-generated vector store
 ├── 💾  outputs/             ← Saved Q&A pairs (timestamped)
@@ -164,6 +164,7 @@ Type your question at the prompt. Type `exit` or `quit` to stop.
 ◆  "How did Digital Media ARR grow year-over-year?"
 ◆  "What risks did Adobe highlight in their most recent 10-K?"
 ```
+---
 
 <div align="center">
 
