@@ -165,7 +165,6 @@ Type your question at the prompt. Type `exit` or `quit` to stop.
 ◆  "What risks did Adobe highlight in their most recent 10-K?"
 ```
 
-
 <div align="center">
 
 ```
