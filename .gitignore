@@ -6,7 +6,7 @@ ENV/
 
 # Environment variables
 .env
-
+*.mp4
 # Python cache
 __pycache__/
 *.pyc
