@@ -1,21 +1,11 @@
+
+![image](https://github.com/Amruth-varsh/Amruth-varsh/blob/main/Friendly%20LiveBot.gif)<!-- GIF SECTION -->
+<div style="display: flex; justify-content: center; ">
+<!--     <img src="" height="auto" width="auto" /> -->
+</div>
+
+
 <div align="center">
-
-```
-╔══════════════════════════════════════════════════════════════════════╗
-║                                                                      ║
-║    ██╗      ███████╗ █████╗ ██████╗ ███████╗██████╗ ███████╗██╗  ██╗ ║
-║    ██║      ██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔════╝██║  ██║ ║
-║    ██║      █████╗  ███████║██║  ██║█████╗  ██████╔╝███████╗███████║ ║
-║    ██║      ██╔══╝  ██╔══██║██║  ██║██╔══╝  ██╔══██╗╚════██║██╔══██║ ║
-║    ███████╗ ███████╗██║  ██║██████╔╝███████╗██║  ██║███████║██║  ██║ ║
-║    ╚══════╝ ╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ║
-║                                                                      ║
-║   ◆  A I  L E A D E R S H I P  I N S I G H T  D E C I S I O N  ◆   ║
-║                    ◆  A G E N T  ◆                                   ║
-║                                                                      ║
-╚══════════════════════════════════════════════════════════════════════╝
-```
-
 ### *Ask anything. Get answers grounded in real financial documents.*
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
