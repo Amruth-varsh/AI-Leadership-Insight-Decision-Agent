@@ -1,0 +1,7 @@
+Q: What is Adobe's revenue breakdown by segment for FY2024?
+
+A: Adobe's revenue breakdown by segment for FY2024 includes Digital Media segment revenue of $15.86 billion, representing 12 percent year-over-year growth, and Document Cloud revenue of $3.18 billion, representing 18 percent year-over-year growth. Additionally, Digital Experience revenue exceeded $5.3 billion in FY2024. The total revenue for FY2024 was $21.51 billion, with 11 percent year-over-year growth. 
+
+**Sources:**
+- ./data\ADBE Q4FY24 Earnings Release.pdf, Page 1 – FY2024 Business Segment Highlights
+- ./data\ADBE Q4FY24 Earnings Release.pdf, Page 0 – FY2024 Financial Highlights and Fourth Quarter Fiscal Year 2024 Financial Highlights

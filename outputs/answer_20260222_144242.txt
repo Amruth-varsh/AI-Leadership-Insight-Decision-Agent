@@ -1,0 +1,7 @@
+Q: What is Adobe's FY2026 earnings per share guidance?
+
+A: Answer: Adobe's FY2026 earnings per share guidance is $17.90 to $18.10 on a GAAP basis and $23.30 to $23.50 on a non-GAAP basis. The company expects to achieve this guidance based on its targets for total revenue, subscription revenue, and total Adobe ending ARR growth. The targets assume a non-GAAP operating margin of ~45.0%, a GAAP tax rate of ~20.5%, and a non-GAAP tax rate of ~18.0%. 
+
+Sources: 
+- ./data\ADBE Q4FY25 Earnings Release.pdf, Page 1 – Summary of Adobe’s FY2026 targets
+- ./data\ADBE Q4FY25 Earnings Release.pdf, Page 1 – Financial Targets and guidance for FY2026

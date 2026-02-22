@@ -1,0 +1,8 @@
+Q: How did Digital Media perform compared to last year?
+
+A: Digital Media revenue grew from $15.864 billion in fiscal 2024 to $17.649 billion in fiscal 2025, representing an 11% year-over-year increase. This growth was driven by increases in revenue associated with Creative and Document Cloud subscription offerings. The segment's revenue also accounted for 74% of the company's total revenue in both fiscal 2024 and 2025. Digital Media Annual Recurring Revenue (ARR) grew to $19.20 billion at the end of fiscal 2025, representing 11.5% year-over-year growth.
+
+**Sources:**
+- ./data\adbe-10k-fy25-final.pdf, Page 35 – Digital Media segment revenue and percentage of total revenue
+- ./data\adbe-10k-fy25-final.pdf, Page 32 – Digital Media ARR growth
+- ./data\adbe-10k-fy24-final.pdf, Page 42 – Digital Media revenue for fiscal 2024
