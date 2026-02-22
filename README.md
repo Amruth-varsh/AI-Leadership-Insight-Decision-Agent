@@ -10,7 +10,8 @@
 ║    ███████╗ ███████╗██║  ██║██████╔╝███████╗██║  ██║███████║██║  ██║ ║
 ║    ╚══════╝ ╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ║
 ║                                                                      ║
-║  ◆ L E A D E R S H I P  I N S I G H T  D E C I S I O N  A G E N T ◆ ║
+║   ◆  A I  L E A D E R S H I P  I N S I G H T  D E C I S I O N  ◆   ║
+║                    ◆  A G E N T  ◆                                   ║
 ║                                                                      ║
 ╚══════════════════════════════════════════════════════════════════════╝
 ```
@@ -31,7 +32,7 @@
 
 > **A RAG-powered analyst that lives inside financial documents.**
 
-Drop in any company documents (Annual reports , Quarterly reports , Strategy notes , Operational updates) — and this agent transforms dense PDFs into instant, citation-backed answers. No hallucinations. No guessing. Every response is anchored to the documents you provide.
+Drop in company documents (e.g.: Annual reports , Quarterly reports , Strategy notes , Operational updates) — and this agent transforms dense PDFs into instant, citation-backed answers. No hallucinations. No guessing. Every response is anchored to the documents you provide.
 
 ```
 You ask   →  "How did Adobe's net income change in FY2025?"
@@ -147,7 +148,6 @@ python main.py
 
 # Force re-index (after adding new documents)
 python main.py --rebuild
-
 ```
 
 Type your question at the prompt. Type `exit` or `quit` to stop.
@@ -164,6 +164,7 @@ Type your question at the prompt. Type `exit` or `quit` to stop.
 ◆  "How did Digital Media ARR grow year-over-year?"
 ◆  "What risks did Adobe highlight in their most recent 10-K?"
 ```
+
 ---
 
 <div align="center">
