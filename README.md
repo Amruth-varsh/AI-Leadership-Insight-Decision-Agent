@@ -1,7 +1,7 @@
-
-![image](https://github.com/Amruth-varsh/Amruth-varsh/blob/main/Friendly%20LiveBot.gif)<!-- GIF SECTION -->
-<div style="display: flex; justify-content: center; ">
-<!--     <img src="" height="auto" width="auto" /> -->
+<div align="center">
+  <img src="https://github.com/Amruth-varsh/Amruth-varsh/blob/main/ai-leadership-agent-preview.gif" height="400" />
+  &nbsp;&nbsp;
+  <img src="https://github.com/Amruth-varsh/Amruth-varsh/blob/main/resized_200x450%20(1).gif" height="400" />
 </div>
 
 
