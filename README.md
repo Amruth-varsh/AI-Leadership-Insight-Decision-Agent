@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-  
+
 
 ### *Ask anything. Get answers grounded in real financial documents.*
 
